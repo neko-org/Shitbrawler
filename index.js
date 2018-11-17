@@ -24,8 +24,7 @@ module.exports = function Shitbrawler(mod) {
 
 	mod.hook('S_ABNORMALITY_BEGIN', 2, (event) => {
 		if(!enabled) return;
-		//10153190 10153210 ???
-		if(event.id === 10153190 && event.target.equals(gameId))  {
+		if(event.id === 10153210 && event.target.equals(gameId))  {
 			useItem(config.brooch); useItem(config.rootbeer);
 		}
 	});
