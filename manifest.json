@@ -1,0 +1,11 @@
+{
+	"files": {
+		"index.js": "94e74b4c62509b2f2e980507b9d650f0a59e9beda19c4d5820dbb870b593b80e"
+	},
+	"defs": {
+		"C_USE_ITEM": 3,
+		"S_ABNORMALITY_BEGIN": 2,
+		"S_LOGIN": 10,
+		"S_START_COOLTIME_ITEM": 1
+	}
+}
