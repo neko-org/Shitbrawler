@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 module.exports = function Shitbrawler(mod) {
 	const cmd = mod.command || mod.require.command;
-	let config = {}, gameId = null, enabled = false, isBrawler = false;
+	let config = {}, gameId = null, enabled = false, isBrawler = false, itemCd = {brooch: 0, rootbeer: 0};
 	try {
 		config = require('./config.json'); }
 	catch(e) { 
@@ -21,11 +21,19 @@ module.exports = function Shitbrawler(mod) {
 			msg(`Shitbrawler now ${enabled ? 'Enabled' : 'Disabled'}`);
 		}
 	});
+	
+	mod.hook('S_START_COOLTIME_ITEM', 1, {order: Number.NEGATIVE_INFINITY}, event => {
+ 		if(!enabled) return;
+ 		if(event.item === config.brooch) itemCd.brooch = Date.now() + event.cooldown * 1000;
+ 		else if(event.item === config.rootbeer) itemCd.rootbeer = Date.now() + event.cooldown * 1000;
+ 	});
 
 	mod.hook('S_ABNORMALITY_BEGIN', 2, (event) => {
 		if(!enabled) return;
 		if(event.id === 10153210 && event.target.equals(gameId))  {
-			useItem(config.brooch); useItem(config.rootbeer);
+			let now = Date.now();
+ 			if (now > itemCd.brooch) useItem(config.brooch);
+ 			if (now > itemCd.rootbeer) useItem(config.rootbeer);
 		}
 	});
 
