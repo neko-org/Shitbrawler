@@ -1,5 +1,12 @@
 {
 	"disableAutoUpdate": false,
+	"name": "Shitbrawler",
+	"author": "Fukki",
+	"description": "QoL for brawler.",
+	"version": "Kappa :v",
+	"options": {
+		"niceName": "Shitbrawler"
+	},
 	"servers": ["https://raw.githubusercontent.com/Fukki/Shitbrawler/master/"],
 	"supportUrl": "https://github.com/Fukki/Shitbrawler/issues/"
 }
