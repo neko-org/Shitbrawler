@@ -28,9 +28,9 @@ module.exports = function Shitbrawler(mod) {
  		else if(event.item === config.rootbeer) itemCd.rootbeer = Date.now() + event.cooldown * 1000;
  	});
 
-	mod.hook('S_ABNORMALITY_BEGIN', 2, (event) => {
+	mod.hook('S_ABNORMALITY_BEGIN', 3, (event) => {
 		if(!enabled) return;
-		if(event.id === 10153210 && event.target.equals(gameId))  {
+		if(event.id === 10153210 && event.target === gameId)  {
 			let now = Date.now();
  			if (now > itemCd.brooch) useItem(config.brooch);
  			if (now > itemCd.rootbeer) useItem(config.rootbeer);
