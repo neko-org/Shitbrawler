@@ -1,12 +1,10 @@
 {
 	"files": {
-		"index.js": "4fb1b7ac0a01874971b2dbe5d7084bf1a16ab8b84e1ee0557e8488b98bf188b8"
+		"index.js": "6b47262a03592ec4a4a3e5be694c44ffdbe5f5a141d53de9a61ed5e36367289c"
 	},
 	"defs": {
-		"C_PRESS_SKILL": 4,
 		"C_USE_ITEM": 3,
 		"S_ABNORMALITY_BEGIN": 3,
-		"S_ABNORMALITY_END": 1,
 		"S_LOGIN": 12,
 		"S_START_COOLTIME_ITEM": 1
 	}
